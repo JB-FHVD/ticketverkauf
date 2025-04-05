@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abschlussball Polizei SH 2025 – Kartenverkauf</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #1c3d6e;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .info, .steps, .paypal-section {
+      background-color: #e0e7ff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .steps {
+      background-color: #fef9c3;
+    }
+
+    label, input {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+      width: 100px;
+    }
+
+    .total {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .paypal-link {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .paypal-link a {
+      display: inline-block;
+      background-color: #ffc439;
+      color: black;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .contact {
+      font-size: 0.9em;
+      text-align: center;
+      margin-top: 40px;
+      color: #555;
+    }
+
+    .example {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Online-Kartenverkauf</h1>
+    <h2>Abschlussball der Polizei SH 2025</h2>
+
+    <div class="info">
+      <p><strong>Veranstaltungsort:</strong> Holstenhallen Neumünster</p>
+      <p><strong>Adresse:</strong> Justus-von-Liebig-Straße 2-4, 24537 Neumünster</p>
+      <p><strong>Einlass:</strong> 19:00 Uhr</p>
+    </div>
+
+    <div class="steps">
+      <h3>Ablauf der Bestellung</h3>
+      <ol>
+        <li><strong>Bezahlung</strong> der analogen Tickets über den untenstehenden <strong>PayPal-Link</strong>.</li>
+        <li>Bitte gib bei der Bezahlung in der PayPal-Beschreibung deinen <strong>vollständigen Namen</strong>, die <strong>Anzahl der Tickets</strong> sowie deine <strong>Studiengruppe</strong> an.</li>
+        <li><strong>Erhalt</strong> der Tickets über die Komiteevertreter (in der Regel aus deiner Studiengruppe).</li>
+        <li><em>Alternativ</em> ist auch Barzahlung und Ticketübergabe direkt über den Komiteevertreter in deiner Studiengruppe möglich.</li>
+      </ol>
+    </div>
+
+    <div class="paypal-section">
+      <h3>Bezahlung via PayPal</h3>
+      <p>Preis pro Ticket: <strong>15 €</strong></p>
+
+      <label for="anzahl">Anzahl Tickets:</label>
+      <input type="number" id="anzahl" name="anzahl" min="1" max="10" value="1" />
+      
+      <div class="total" id="gesamtbetrag">Gesamtbetrag: 15 €</div>
+
+      <div class="example">
+        Beispiel: 2 Tickets → 2 × 15 € = 30 €<br/>
+        Bitte den Gesamtbetrag überweisen und in der Beschreibung Namen, Anzahl der Tickets & Studiengruppe angeben.
+      </div>
+
+      <div class="paypal-link">
+        <a href="https://www.paypal.me/abschlussball2025" target="_blank">
+          ➤ Jetzt via PayPal bezahlen
+        </a>
+      </div>
+    </div>
+
+    <div class="contact">
+      <p>Bei Fragen oder Problemen: <br>
+        Schreibe eine E-Mail an <a href="mailto:Abschlussball2025@web.de">Abschlussball2025@web.de</a><br>
+        oder kontaktiere deine Komiteevertreter.</p>
+    </div>
+  </div>
+
+  <script>
+    const ticketInput = document.getElementById('anzahl');
+    const totalOutput = document.getElementById('gesamtbetrag');
+    const preisProTicket = 15;
+
+    ticketInput.addEventListener('input', () => {
+      const anzahl = parseInt(ticketInput.value) || 1;
+      const gesamt = anzahl * preisProTicket;
+      totalOutput.textContent = `Gesamtbetrag: ${gesamt} €`;
+    });
+  </script>
+</body>
+</html>
